@@ -16,20 +16,20 @@ if (BUILD_WITH_BLAS)
 endif()
 
 set(SRCS
-    cpu_axpy.cpp
-    cpu_dot.cpp
-    cpu_nrm2.cpp
-    cpu_scale.cpp
-    memory.cpp
-    main.cpp
+    src/cpu_axpy.cpp
+    src/cpu_dot.cpp
+    src/cpu_nrm2.cpp
+    src/cpu_scale.cpp
+    src/memory.cpp
+    src/main.cpp
 )
 
 if (BUILD_WITH_BLAS)
     list(APPEND SRCS
-        blas_axpy.cpp
-        blas_dot.cpp
-        blas_nrm2.cpp
-        blas_scale.cpp
+        src/blas_axpy.cpp
+        src/blas_dot.cpp
+        src/blas_nrm2.cpp
+        src/blas_scale.cpp
     )
 endif()
 
