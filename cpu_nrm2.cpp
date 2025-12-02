@@ -1,5 +1,7 @@
 #include <benchmark/benchmark.h>
 #include "types.h"
+#include <chrono>
+#include <cmath>
 
 namespace {
 

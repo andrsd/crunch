@@ -1,5 +1,6 @@
 #include <benchmark/benchmark.h>
 #include "types.h"
+#include <chrono>
 
 namespace {
 

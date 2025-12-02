@@ -2,6 +2,7 @@
 
 #include <benchmark/benchmark.h>
 #include <cstdlib>
+#include <cstdint>
 
 using i32 = std::uint32_t;
 

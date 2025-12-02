@@ -1,5 +1,7 @@
 #include <benchmark/benchmark.h>
 #include <vector>
+#include <chrono>
+#include <cstring>
 
 namespace {
 
