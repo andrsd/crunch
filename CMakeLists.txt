@@ -20,6 +20,7 @@ set(SRCS
     cpu_dot.cpp
     cpu_nrm2.cpp
     cpu_scale.cpp
+    memory.cpp
     main.cpp
 )
 
