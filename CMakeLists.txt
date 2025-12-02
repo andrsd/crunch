@@ -4,7 +4,10 @@ project(crunch
     VERSION 1.0.0
 )
 
+set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
+
 option(BUILD_WITH_BLAS "Build with BLAS")
+option(BUILD_WITH_SYCL "Build with SYCL")
 
 find_package(benchmark REQUIRED)
 
@@ -13,6 +16,10 @@ if (BUILD_WITH_BLAS)
         set(BLA_VENDOR Apple)
     endif()
     find_package(BLAS REQUIRED)
+endif()
+
+if (BUILD_WITH_SYCL)
+    find_package(SYCLCompiler REQUIRED)
 endif()
 
 set(SRCS
@@ -30,6 +37,15 @@ if (BUILD_WITH_BLAS)
         src/blas_dot.cpp
         src/blas_nrm2.cpp
         src/blas_scale.cpp
+    )
+endif()
+
+if (BUILD_WITH_SYCL)
+    list(APPEND SRCS
+        src/sycl_axpy.cpp
+        src/sycl_dot.cpp
+        src/sycl_nrm2.cpp
+        src/sycl_scale.cpp
     )
 endif()
 
