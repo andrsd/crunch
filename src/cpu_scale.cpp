@@ -35,7 +35,7 @@ cpu_scale(benchmark::State & state)
     double alpha = std::rand();
     for (auto _ : state) {
         for (i32 i = 0; i < n; ++i) {
-            y[i] += alpha * y[i];
+            y[i] = alpha * y[i];
         }
     }
 
