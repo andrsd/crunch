@@ -1,8 +1,11 @@
 #include <benchmark/benchmark.h>
 #ifdef __APPLE__
     #include <vecLib/cblas.h>
+#else
+    #include <cblas.h>
 #endif
 #include "types.h"
+#include <chrono>
 
 namespace {
 
