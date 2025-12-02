@@ -41,8 +41,8 @@ cpu_nrm2(benchmark::State & state)
         benchmark::DoNotOptimize(nrm2);
     }
 
-    state.counters["GFLOP/s"] =
-        benchmark::Counter(calc_gflops(2. * n, state.iterations()), benchmark::Counter::kIsRate);
+    state.counters["FLOP/s"] =
+        benchmark::Counter(calc_flops(2. * n, state.iterations()), benchmark::Counter::kIsRate);
 }
 
 // clang-format off

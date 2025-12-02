@@ -6,7 +6,7 @@
 using i32 = std::uint32_t;
 
 inline double
-calc_gflops(double flops_per_iter, benchmark::IterationCount iters)
+calc_flops(double flops_per_iter, benchmark::IterationCount iters)
 {
-    return flops_per_iter * iters / 1e9;
+    return flops_per_iter * iters;
 }

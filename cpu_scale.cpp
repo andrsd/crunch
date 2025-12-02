@@ -38,8 +38,8 @@ cpu_scale(benchmark::State & state)
         }
     }
 
-    state.counters["GFLOP/s"] =
-        benchmark::Counter(calc_gflops(n, state.iterations()), benchmark::Counter::kIsRate);
+    state.counters["FLOP/s"] =
+        benchmark::Counter(calc_flops(n, state.iterations()), benchmark::Counter::kIsRate);
 }
 
 // clang-format off
