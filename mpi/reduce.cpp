@@ -1,4 +1,5 @@
 #include <benchmark/benchmark.h>
+#include "utils.h"
 #include "mpicpp-lite/mpicpp-lite.h"
 
 namespace mpi = mpicpp_lite;
@@ -27,8 +28,7 @@ reduce_int_sum(benchmark::State & state)
         comm.reduce(num, red, mpi::op::sum<int>(), 0);
         auto t1 = mpi::wall_time();
 
-        double max_elapsed_secs;
-        comm.all_reduce(t1 - t0, max_elapsed_secs, mpi::op::max<double>());
+        auto max_elapsed_secs = max_elapsed_time(comm, t1 - t0);
         state.SetIterationTime(max_elapsed_secs);
     }
 }
@@ -46,8 +46,7 @@ reduce_int_max(benchmark::State & state)
         comm.reduce(num, red, mpi::op::max<int>(), 0);
         auto t1 = mpi::wall_time();
 
-        double max_elapsed_secs;
-        comm.all_reduce(t1 - t0, max_elapsed_secs, mpi::op::max<double>());
+        auto max_elapsed_secs = max_elapsed_time(comm, t1 - t0);
         state.SetIterationTime(max_elapsed_secs);
     }
 }
@@ -65,8 +64,7 @@ reduce_int_min(benchmark::State & state)
         comm.reduce(num, red, mpi::op::min<int>(), 0);
         auto t1 = mpi::wall_time();
 
-        double max_elapsed_secs;
-        comm.all_reduce(t1 - t0, max_elapsed_secs, mpi::op::max<double>());
+        auto max_elapsed_secs = max_elapsed_time(comm, t1 - t0);
         state.SetIterationTime(max_elapsed_secs);
     }
 }
@@ -84,8 +82,7 @@ reduce_double_sum(benchmark::State & state)
         comm.reduce(num, red, mpi::op::sum<double>(), 0);
         auto t1 = mpi::wall_time();
 
-        double max_elapsed_secs;
-        comm.all_reduce(t1 - t0, max_elapsed_secs, mpi::op::max<double>());
+        auto max_elapsed_secs = max_elapsed_time(comm, t1 - t0);
         state.SetIterationTime(max_elapsed_secs);
     }
 }
@@ -103,8 +100,7 @@ reduce_double_max(benchmark::State & state)
         comm.reduce(num, red, mpi::op::max<double>(), 0);
         auto t1 = mpi::wall_time();
 
-        double max_elapsed_secs;
-        comm.all_reduce(t1 - t0, max_elapsed_secs, mpi::op::max<double>());
+        auto max_elapsed_secs = max_elapsed_time(comm, t1 - t0);
         state.SetIterationTime(max_elapsed_secs);
     }
 }
@@ -122,8 +118,7 @@ reduce_double_min(benchmark::State & state)
         comm.reduce(num, red, mpi::op::min<double>(), 0);
         auto t1 = mpi::wall_time();
 
-        double max_elapsed_secs;
-        comm.all_reduce(t1 - t0, max_elapsed_secs, mpi::op::max<double>());
+        auto max_elapsed_secs = max_elapsed_time(comm, t1 - t0);
         state.SetIterationTime(max_elapsed_secs);
     }
 }
