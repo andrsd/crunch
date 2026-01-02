@@ -4,7 +4,7 @@
 #else
     #include <cblas.h>
 #endif
-#include "types.h"
+#include "common/types.h"
 #include <chrono>
 
 namespace {

@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <cstdint>
 
+using i8 = std::int8_t;
 using i32 = std::uint32_t;
 
 inline double

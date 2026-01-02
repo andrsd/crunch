@@ -1,5 +1,5 @@
 #include <benchmark/benchmark.h>
-#include "types.h"
+#include "common/types.h"
 #include <CL/sycl.hpp>
 
 using namespace cl;
