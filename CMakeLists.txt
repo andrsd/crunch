@@ -73,6 +73,7 @@ if (BUILD_WITH_MPI)
         mpi/all_reduce.cpp
         mpi/broadcast.cpp
         mpi/reduce.cpp
+        mpi/send_recv.cpp
     )
 
     add_executable(mpi-${PROJECT_NAME} ${MPI_SRCS})
