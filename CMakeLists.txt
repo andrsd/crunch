@@ -74,6 +74,9 @@ if (BUILD_WITH_MPI)
         mpi/broadcast.cpp
         mpi/reduce.cpp
         mpi/send_recv.cpp
+        mpi/mpi_cpu_dot.cpp
+        mpi/mpi_cpu_nrm2.cpp
+        mpi/mpi_cpu_scale.cpp
     )
 
     add_executable(mpi-${PROJECT_NAME} ${MPI_SRCS})
