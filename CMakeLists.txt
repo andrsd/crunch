@@ -65,6 +65,7 @@ if (BUILD_WITH_MPI)
 
     set(MPI_SRCS
         mpi/main.cpp
+        mpi/all_reduce.cpp
         mpi/reduce.cpp
     )
 
