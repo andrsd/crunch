@@ -65,6 +65,7 @@ if (BUILD_WITH_MPI)
 
     set(MPI_SRCS
         mpi/main.cpp
+        mpi/reduce.cpp
     )
 
     add_executable(mpi-${PROJECT_NAME} ${MPI_SRCS})
