@@ -2,12 +2,14 @@ cmake_minimum_required(VERSION 3.16)
 
 project(crunch
     VERSION 1.0.0
+    LANGUAGES C CXX
 )
 
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 
 option(BUILD_WITH_BLAS "Build with BLAS")
 option(BUILD_WITH_SYCL "Build with SYCL")
+option(BUILD_WITH_MPI "Build with MPI")
 
 find_package(benchmark REQUIRED)
 
@@ -54,4 +56,22 @@ add_executable(${PROJECT_NAME} ${SRCS})
 target_link_libraries(${PROJECT_NAME} PRIVATE benchmark::benchmark)
 if (BUILD_WITH_BLAS)
     target_link_libraries(${PROJECT_NAME} PRIVATE BLAS::BLAS)
+endif()
+
+# MPI
+
+if (BUILD_WITH_MPI)
+    find_package(mpicpp-lite 2.2 REQUIRED)
+
+    set(MPI_SRCS
+        mpi/main.cpp
+    )
+
+    add_executable(mpi-${PROJECT_NAME} ${MPI_SRCS})
+
+    target_link_libraries(mpi-${PROJECT_NAME}
+        PRIVATE
+            benchmark::benchmark
+            mpicpp-lite::mpicpp-lite
+    )
 endif()
