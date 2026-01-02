@@ -71,10 +71,16 @@ if (BUILD_WITH_MPI)
     set(MPI_SRCS
         mpi/main.cpp
         mpi/all_reduce.cpp
+        mpi/broadcast.cpp
         mpi/reduce.cpp
     )
 
     add_executable(mpi-${PROJECT_NAME} ${MPI_SRCS})
+
+    target_include_directories(mpi-${PROJECT_NAME}
+        PRIVATE
+            ${CMAKE_SOURCE_DIR}
+    )
 
     target_link_libraries(mpi-${PROJECT_NAME}
         PRIVATE
