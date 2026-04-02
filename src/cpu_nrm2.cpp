@@ -17,7 +17,7 @@ do_setup(const benchmark::State & state)
     auto n = state.range(0);
     x = new double[n];
 
-    for (i32 i = 0; i < n; ++i) {
+    for (i64 i = 0; i < n; ++i) {
         x[i] = std::rand();
     }
 }
@@ -35,7 +35,7 @@ cpu_nrm2(benchmark::State & state)
 
     for (auto _ : state) {
         double nrm2 = 0.;
-        for (i32 i = 0; i < n; ++i) {
+        for (i64 i = 0; i < n; ++i) {
             nrm2 += x[i] * x[i];
         }
         nrm2 = std::sqrt(nrm2);

@@ -18,7 +18,7 @@ do_setup(const benchmark::State & state)
     x = new double[n];
     y = new double[n];
 
-    for (i32 i = 0; i < n; ++i) {
+    for (i64 i = 0; i < n; ++i) {
         x[i] = std::rand();
         y[i] = std::rand();
     }
@@ -38,7 +38,7 @@ cpu_dot(benchmark::State & state)
 
     for (auto _ : state) {
         double dot = 0.;
-        for (i32 i = 0; i < n; ++i) {
+        for (i64 i = 0; i < n; ++i) {
             dot += x[i] * y[i];
         }
 

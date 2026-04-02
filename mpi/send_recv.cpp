@@ -20,7 +20,7 @@ do_setup(const benchmark::State & state)
 
     auto n = state.range(0);
     x = new char[n];
-    for (i32 i = 0; i < n; ++i) {
+    for (i64 i = 0; i < n; ++i) {
         x[i] = std::rand();
     }
 }

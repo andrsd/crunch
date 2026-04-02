@@ -16,7 +16,7 @@ do_setup(const benchmark::State & state)
     auto n = state.range(0);
     y = new double[n];
 
-    for (i32 i = 0; i < n; ++i) {
+    for (i64 i = 0; i < n; ++i) {
         y[i] = std::rand();
     }
 }
@@ -34,7 +34,7 @@ cpu_scale(benchmark::State & state)
 
     double alpha = std::rand();
     for (auto _ : state) {
-        for (i32 i = 0; i < n; ++i) {
+        for (i64 i = 0; i < n; ++i) {
             y[i] = alpha * y[i];
         }
     }
