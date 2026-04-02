@@ -1,9 +1,5 @@
 #include <benchmark/benchmark.h>
-#ifdef __APPLE__
-    #include <vecLib/cblas.h>
-#else
-    #include <cblas.h>
-#endif
+#include "common/blas.h"
 #include "common/types.h"
 #include <chrono>
 

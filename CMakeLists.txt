@@ -62,6 +62,9 @@ target_include_directories(${PROJECT_NAME}
 target_link_libraries(${PROJECT_NAME} PRIVATE benchmark::benchmark)
 if (BUILD_WITH_BLAS)
     target_link_libraries(${PROJECT_NAME} PRIVATE BLAS::BLAS)
+    if (APPLE)
+        target_compile_definitions(${PROJECT_NAME} PRIVATE ACCELERATE_NEW_LAPACK)
+    endif()
 endif()
 
 # MPI
