@@ -29,6 +29,7 @@ set(SRCS
     src/cpu_dot.cpp
     src/cpu_nrm2.cpp
     src/cpu_scale.cpp
+    src/cpu_stream.cpp
     src/memory.cpp
     src/main.cpp
 )
