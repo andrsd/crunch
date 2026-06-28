@@ -25,6 +25,7 @@ if (BUILD_WITH_SYCL)
 endif()
 
 set(SRCS
+    src/raw_flops.cpp
     src/cpu_axpy.cpp
     src/cpu_dot.cpp
     src/cpu_nrm2.cpp
