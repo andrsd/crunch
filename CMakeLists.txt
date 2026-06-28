@@ -103,3 +103,10 @@ endif()
 add_executable(streams-basic streams/streams-basic.cpp)
 
 target_compile_features(streams-basic PUBLIC cxx_std_20)
+
+# mpi version
+if (BUILD_WITH_MPI)
+    add_executable(streams-mpi streams/streams-mpi.cpp)
+    target_compile_features(streams-mpi PUBLIC cxx_std_20)
+    target_link_libraries(streams-mpi PRIVATE mpicpp-lite::mpicpp-lite)
+endif()
