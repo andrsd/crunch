@@ -97,3 +97,9 @@ if (BUILD_WITH_MPI)
             mpicpp-lite::mpicpp-lite
     )
 endif()
+
+# STREAMS
+
+add_executable(streams-basic streams/streams-basic.cpp)
+
+target_compile_features(streams-basic PUBLIC cxx_std_20)
