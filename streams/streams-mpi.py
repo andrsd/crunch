@@ -60,4 +60,4 @@ for i in range(1, n_cpus + 1):
         base_rate = rate
     else:
         ratio = rate / base_rate
-    print(f"{i} {rate:10.2f} MB/s - {ratio:.2f} x")
+    print(f"{i:3} {rate:10.2f} MB/s - {ratio:.2f} x")
