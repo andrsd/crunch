@@ -2,6 +2,7 @@
 #include "utils.h"
 #include "common/types.h"
 #include "mpicpp-lite/mpicpp-lite.h"
+#include <ctime>
 
 namespace mpi = mpicpp_lite;
 

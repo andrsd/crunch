@@ -1,6 +1,7 @@
 #include <benchmark/benchmark.h>
 #include "utils.h"
 #include "mpicpp-lite/mpicpp-lite.h"
+#include <ctime>
 
 namespace mpi = mpicpp_lite;
 

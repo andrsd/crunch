@@ -12,6 +12,7 @@ option(BUILD_WITH_SYCL "Build with SYCL")
 option(BUILD_WITH_MPI "Build with MPI")
 
 find_package(benchmark REQUIRED)
+find_package(Threads REQUIRED)
 
 if (BUILD_WITH_BLAS)
     if (APPLE)
@@ -114,3 +115,4 @@ endif()
 # threads version
 add_executable(streams-threads streams/streams-threads.cpp)
 target_compile_features(streams-threads PUBLIC cxx_std_20)
+target_link_libraries(streams-threads PRIVATE Threads::Threads)

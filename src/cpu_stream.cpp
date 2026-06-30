@@ -1,5 +1,6 @@
 #include <benchmark/benchmark.h>
 #include "common/types.h"
+#include <ctime>
 
 constexpr i64 N = 80'000'000;
 constexpr i64 N_ITERS = 50;
