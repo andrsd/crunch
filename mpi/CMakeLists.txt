@@ -1,4 +1,4 @@
-find_package(mpicpp-lite 2.2 REQUIRED)
+find_package(mpicpp-lite 2.8 REQUIRED)
 
 add_executable(mpi-crunch)
 

@@ -31,7 +31,7 @@ benchmark(mpi::Communicator comm)
     std::vector<double> C(n, 3.);
     const double ALPHA = 3.0;
 
-    std::array<double, NTIMES> times;
+    std::vector<double> times(NTIMES, 0.);
     for (int k = 0; k < NTIMES; ++k) {
         comm.barrier();
         {
@@ -43,8 +43,7 @@ benchmark(mpi::Communicator comm)
             times[k] = tmr.seconds();
         }
     }
-    // comm.all_reduce(times, mpi::op::max<double>());
-    MPI_Allreduce(MPI_IN_PLACE, times.data(), NTIMES, MPI_DOUBLE, MPI_MAX, comm);
+    comm.all_reduce(times, mpi::op::max<double>());
 
     auto min_time = std::numeric_limits<double>::max();
     // note: skip first iteration
