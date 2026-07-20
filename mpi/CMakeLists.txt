@@ -9,6 +9,7 @@ target_sources(mpi-crunch
         broadcast.cpp
         reduce.cpp
         send_recv.cpp
+        mpi_cpu_axpy.cpp
         mpi_cpu_dot.cpp
         mpi_cpu_nrm2.cpp
         mpi_cpu_scale.cpp
