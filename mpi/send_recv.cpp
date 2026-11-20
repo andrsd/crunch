@@ -10,7 +10,7 @@ namespace {
 
 char * x = nullptr;
 
-const int TAG = 1111;
+const mpi::Tag TAG { 1111 };
 
 } // namespace
 

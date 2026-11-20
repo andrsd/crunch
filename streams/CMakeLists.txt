@@ -1,4 +1,4 @@
-find_package(mpicpp-lite 2.2 REQUIRED)
+find_package(mpicpp-lite 3.1 REQUIRED)
 
 # basic
 add_executable(streams-basic streams-basic.cpp)
